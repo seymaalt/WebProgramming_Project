@@ -2,19 +2,19 @@
 @model LoginVM;
 
 @{
-    ViewData["Title"] = "Log in to your account";
+    ViewData["Title"] = "Hesabınıza giriş yapın";
 }
 
 <div class="row">
     <div class="col-md-6 offset-3">
         <p>
-            <h4>Log in to your account</h4>
+            <h4 style="">Hesabınıza giriş yapın</h4>
         </p>
 
         @if (TempData["Error"] != null)
         {
             <div class="col-md-12 alert alert-danger">
-                <span><b>Sorry!</b> - @TempData["Error"] </span>
+                <span><b>ÜZGÜNÜM!</b> - @TempData["Error"] </span>
             </div>
         }
 
@@ -24,19 +24,19 @@
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                     <div class="form-group">
-                        <label asp-for="EmailAddress" class="control-label"></label>
-                        <input asp-for="EmailAddress" class="form-control" />
+                        <label asp-for="EmailAddress" class="control-label">E-mail</label>
+                        <input asp-for="EmailAddress" class="form-control" style="border-radius: 70px;" />
                         <span asp-validation-for="EmailAddress" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="Password" class="control-label"></label>
-                        <input asp-for="Password" class="form-control" />
+                        <label asp-for="Password" class="control-label">Şifre</label>
+                        <input asp-for="Password" class="form-control" style="border-radius: 70px;"/>
                         <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
-
+                    <span style="padding:5px;"></span>
                     <div class="form-group">
-                        <input class="btn btn-outline-success float-right" type="submit" value="Log in" />
-                        <a class="btn btn-outline-secondary" asp-controller="Movies" asp-action="Index">Cancel</a>
+                        <input class="btn btn-outline-success float-right" type="submit" value="Giriş yap" style="background-color:#F8E71C;border-style: none;border-radius: 100px;"/>
+                        <a class="btn btn-outline-secondary" asp-controller="Movies" asp-action="Index" style="background-color:#F8E71C;border-style: none;border-radius: 100px;">Kapat</a>
                     </div>
                 </form>
             </div>
