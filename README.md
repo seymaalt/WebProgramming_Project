@@ -35,5 +35,5 @@ b201210068@sakarya.edu.tr) ve Şifre: Sau.12)
 
 -Tablolarda primary key olarak id değerleri kullanılmıştır.
 
-
+![veri tabanı][./img/veriTabanı.png]
 
