@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Aktörler" xml:space="preserve">
+    <value>Aktörler</value>
+  </data>
+  <data name="Ara" xml:space="preserve">
+    <value>Ara</value>
+  </data>
   <data name="Barış Füsun'u gördüğü ilk anda aşık olur. İsmini bilmediği ama aşık olduğu kıza ulaşmak için elinden geleni yapar, başarılı da olur. Her şey masallardaki gibi gelişmektedir, ta ki..." xml:space="preserve">
     <value>Barış Füsun'u gördüğü ilk anda aşık olur. İsmini bilmediği ama aşık olduğu kıza ulaşmak için elinden geleni yapar, başarılı da olur. Her şey masallardaki gibi gelişmektedir, ta ki...</value>
   </data>
   <data name="Başlangıç Tarihi" xml:space="preserve">
     <value>Başlangıç Tarihi</value>
+  </data>
+  <data name="Biletler" xml:space="preserve">
+    <value>Biletler</value>
   </data>
   <data name="Bitiş Tarihi" xml:space="preserve">
     <value>Bitiş Tarihi</value>
@@ -135,11 +144,8 @@
   <data name="Ekle" xml:space="preserve">
     <value>Ekle</value>
   </data>
-  <data name="Filmler" xml:space="preserve">
-    <value>Filmler</value>
-  </data>
-  <data name="Giriş Yap" xml:space="preserve">
-    <value>Giriş Yap</value>
+  <data name="Giriş" xml:space="preserve">
+    <value>Giriş</value>
   </data>
   <data name="GÜNÜ GEÇMİŞ" xml:space="preserve">
     <value>GÜNÜ GEÇMİŞ</value>
@@ -150,13 +156,25 @@
   <data name="Kayıt Ol" xml:space="preserve">
     <value>Kayıt Ol</value>
   </data>
+  <data name="Kullanıcılar" xml:space="preserve">
+    <value>Kullanıcılar</value>
+  </data>
   <data name="Siccin 3 Siccin 2 filminin devamı olarak çekilmiş bir korku filmidir. Filmin yönetmenliğini ve senaristliğini Alper Mestçi üstlenmiştir, yapımcısı ise Muhteşem Tözüm' dür." xml:space="preserve">
     <value>Siccin 3 Siccin 2 filminin devamı olarak çekilmiş bir korku filmidir. Filmin yönetmenliğini ve senaristliğini Alper Mestçi üstlenmiştir, yapımcısı ise Muhteşem Tözüm' dür.</value>
   </data>
   <data name="Sinema" xml:space="preserve">
     <value>Sinema</value>
   </data>
+  <data name="Sinemalar" xml:space="preserve">
+    <value>Sinemalar</value>
+  </data>
   <data name="Televizyon için skeç programları yazıp, senaryoları sürekli yapımcılar tarafından geri çevrilen Metin, böyle bir olayın akşamında gittiği barda Duygu ile tanışır." xml:space="preserve">
     <value>Televizyon için skeç programları yazıp, senaryoları sürekli yapımcılar tarafından geri çevrilen Metin, böyle bir olayın akşamında gittiği barda Duygu ile tanışır.</value>
+  </data>
+  <data name="Yapımcılar" xml:space="preserve">
+    <value>Yapımcılar</value>
+  </data>
+  <data name="Çıkış" xml:space="preserve">
+    <value>Çıkış</value>
   </data>
 </root>

@@ -1,5 +1,6 @@
 ﻿@model Movie
-
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 @{
     ViewData["Title"] = "Film Detayları";
 }
@@ -9,7 +10,7 @@
         <div class="card mb-12">
             <div class="row g-0">
                 <div class="col-md-12">
-                    <div class="card-header text-white bg-info">
+                    <div class="card-header text-white " style="background-color:#474747;" >
                         <p class="card-text">
                             <h5 class="card-title">
                                 @Model.Name
@@ -24,22 +25,22 @@
                     <div class="card-body">
                         <p class="card-text">@Model.Description</p>
                         <p class="card-text">
-                            <b>Cinema: </b>
+                            <b>Sinema: </b>
                             <a asp-controller="Cinemas" asp-action="Details" asp-route-id="@Model.CinemaId">
                                 @Model.Cinema.Name
                             </a>
                         </p>
                         <p class="card-text">
-                            <b>Producer: </b>
+                            <b>Yapımcı: </b>
                             <a asp-controller="Producers" asp-action="Details" asp-route-id="@Model.ProducerId">
                                 @Model.Producer.FullName
                             </a>
                         </p>
-                        <p class="card-text"><b>Category: </b>@Model.MovieCategory</p>
-                        <p class="card-text"><b>Start Date: </b>@Model.StartDate.ToString("dd MMM yy")</p>
-                        <p class="card-text"><b>End Date: </b>@Model.EndDate.ToString("dd MMM yy")</p>
+                        <p class="card-text"><b>Kategori: </b>@Model.MovieCategory</p>
+                        <p class="card-text"><b>Başlangıç Tarihi: </b>@Model.StartDate.ToString("dd MMM yy")</p>
+                        <p class="card-text"><b>Bitiş Tarihi: </b>@Model.EndDate.ToString("dd MMM yy")</p>
                         <p class="card-text ">
-                            <b>Status: </b>
+                            <b>Durum: </b>
                             @if (DateTime.Now >= Model.StartDate && DateTime.Now <= Model.EndDate)
                             {
                                 <span class="badge bg-success text-white">AVAILABLE</span>
@@ -54,9 +55,9 @@
                             }
                         </p>
                         <p class="card-text">
-                            <b>Actors: </b>
+                            <b>Aktörler: </b>
                             <hr />
-                            <div class="row">
+                            <div class="" style="flex-direction:row;">
                                 @foreach (var actor in Model.Actors_Movies)
                                 {
                                     <div class="column text-center">
@@ -73,12 +74,12 @@
                 <div class="col-md-12">
                     <div class="card-footer">
                         <p class="card-text">
-                            <a class="btn btn-outline-primary float-right" asp-action="Index">
-                                Back to List
+                            <a class="btn btn-outline-primary float-right" asp-action="Index" style="border-style: none;border-radius: 100px;">
+                                Listeye geri dön
                             </a>
                             <a class="btn btn-success text-white  @((DateTime.Now > Model.EndDate) ? "disabled" : "")"
                                asp-controller="Orders"
-                               asp-action="AddItemToShoppingCart" asp-route-id="@Model.Id"><i class="bi bi-cart-plus"></i> Add to Cart (Price @Model.Price.ToString("c"))</a>
+                               asp-action="AddItemToShoppingCart" asp-route-id="@Model.Id" style="border-style: none;border-radius: 100px;"><i class="bi bi-cart-plus"></i> @Localizer["Ekle"]  (Fiyat @Model.Price.ToString("c"))</a>
                         </p>
                     </div>
                 </div>

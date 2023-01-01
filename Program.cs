@@ -1,3 +1,4 @@
+using AspNetCoreMultilingual.Middlewares;
 using eCommerce.Data;
 using eCommerce.Data.Cart;
 using eCommerce.Data.Services;
@@ -8,7 +9,29 @@ using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddControllersWithViews()
+                .AddViewLocalization();
 
+builder.Services.AddLocalization(options =>
+{
+    options.ResourcesPath = "Resources";
+});
+
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    options.DefaultRequestCulture = new("tr-TR");
+
+    CultureInfo[] cultures = new CultureInfo[]
+    {
+        new("tr-TR"),
+        new("en-US"),
+    };
+
+    options.SupportedCultures = cultures;
+    options.SupportedUICultures = cultures;
+});
+
+builder.Services.AddScoped<RequestLocalizationCookiesMiddleware>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -48,7 +71,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseRequestLocalization();
+app.UseRequestLocalizationCookies();
 app.UseRouting();
 app.UseSession();
 
@@ -67,28 +91,3 @@ AppDbInitializer.Seed(app);
 AppDbInitializer.SeedUsersAndRolesAsync(app).Wait();
 
 app.Run();
-
-app.UseRequestLocalization();
-
-builder.Services.AddControllersWithViews()
-                .AddViewLocalization();
-
-builder.Services.AddLocalization(options =>
-{
-    options.ResourcesPath = "Resources";
-});
-
-builder.Services.Configure<RequestLocalizationOptions>(options =>
-{
-    options.DefaultRequestCulture = new("tr-TR");
-
-    CultureInfo[] cultures = new CultureInfo[]
-    {
-        new("tr-TR"),
-        new("en-US"),
-        new("fr-FR")
-    };
-
-    options.SupportedCultures = cultures;
-    options.SupportedUICultures = cultures;
-});

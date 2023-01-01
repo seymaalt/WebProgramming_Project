@@ -1,8 +1,10 @@
-﻿using eCommerce.Data;
+﻿using AspNetCoreMultilingual.Languages;
+using eCommerce.Data;
 using eCommerce.Data.Services;
 using eCommerce.Data.Static;
 using eCommerce.Data.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Localization;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -16,17 +18,42 @@ namespace eCommerce.Controllers
     public class MoviesController : Controller
     {
         private readonly IMoviesService _service;
-       
-        public MoviesController(IMoviesService service)
+        private readonly IStringLocalizer<Lang> _stringLocalizer;
+
+        public MoviesController(IStringLocalizer<Lang> stringLocalizer, IMoviesService service)
         {
+            _stringLocalizer = stringLocalizer;
             _service = service;
         }
+        [AllowAnonymous]
+        public IActionResult SetAppLanguage(string culture, string returnUrl)
+        {
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
+            );
 
+            return LocalRedirect(returnUrl);
+        }
+        [AllowAnonymous]
+        public IActionResult SetCulture(string id = "en")
+        {
+            string culture = id;
+            Response.Cookies.Append(
+               CookieRequestCultureProvider.DefaultCookieName,
+               CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+               new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
+           );
+
+            ViewData["Message"] = "Culture set to " + culture;
+
+            return View("Privacy");
+        }
+   
         [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
-            
-          
             var allMovies = await _service.GetAllAsync(n => n.Cinema);
             return View(allMovies);
         }

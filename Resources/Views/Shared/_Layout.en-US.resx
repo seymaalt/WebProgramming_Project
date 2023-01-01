@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Aktörler" xml:space="preserve">
+    <value>Actors</value>
+  </data>
+  <data name="Ara" xml:space="preserve">
+    <value>Search Movie...</value>
+  </data>
   <data name="Barış Füsun'u gördüğü ilk anda aşık olur. İsmini bilmediği ama aşık olduğu kıza ulaşmak için elinden geleni yapar, başarılı da olur. Her şey masallardaki gibi gelişmektedir, ta ki..." xml:space="preserve">
     <value>He falls in love the first time he sees Barış Füsun. He does his best to reach the girl whose name he does not know but falls in love with, and he succeeds. Everything develops like in fairy tales, until...</value>
   </data>
   <data name="Başlangıç Tarihi" xml:space="preserve">
     <value>Starting Date</value>
+  </data>
+  <data name="Biletler" xml:space="preserve">
+    <value>Tickets</value>
   </data>
   <data name="Bitiş Tarihi" xml:space="preserve">
     <value>End Date</value>
@@ -138,16 +147,13 @@
   <data name="Ekle" xml:space="preserve">
     <value>Add</value>
   </data>
-  <data name="Film ara..." xml:space="preserve">
-    <value>Search Movie...</value>
-  </data>
   <data name="Filmler" xml:space="preserve">
     <value>Movies</value>
   </data>
   <data name="Fiyat" xml:space="preserve">
     <value>Price</value>
   </data>
-  <data name="Giriş Yap" xml:space="preserve">
+  <data name="Giriş" xml:space="preserve">
     <value>Login</value>
   </data>
   <data name="GÜNÜ GEÇMİŞ" xml:space="preserve">
@@ -159,13 +165,25 @@
   <data name="Kayıt Ol" xml:space="preserve">
     <value>Register</value>
   </data>
+  <data name="Kullanıcılar" xml:space="preserve">
+    <value>Users</value>
+  </data>
   <data name="Siccin 3 Siccin 2 filminin devamı olarak çekilmiş bir korku filmidir. Filmin yönetmenliğini ve senaristliğini Alper Mestçi üstlenmiştir, yapımcısı ise Muhteşem Tözüm' dür." xml:space="preserve">
     <value>Siccin 3 is a horror movie made as a sequel to Siccin 2. The director and scriptwriter of the movie is Alper Mestçi, and the producer is Magnificent Tözüm.</value>
   </data>
   <data name="Sinema" xml:space="preserve">
     <value>Cinema</value>
   </data>
+  <data name="Sinemalar" xml:space="preserve">
+    <value>Cinemas</value>
+  </data>
   <data name="Televizyon için skeç programları yazıp, senaryoları sürekli yapımcılar tarafından geri çevrilen Metin, böyle bir olayın akşamında gittiği barda Duygu ile tanışır." xml:space="preserve">
     <value>Metin, who writes sketch programs for television and whose scenarios are constantly rejected by the producers, meets Duygu at the bar he goes to on the evening of such an event.</value>
+  </data>
+  <data name="Yapımcılar" xml:space="preserve">
+    <value>Producers</value>
+  </data>
+  <data name="Çıkış" xml:space="preserve">
+    <value>Exit</value>
   </data>
 </root>

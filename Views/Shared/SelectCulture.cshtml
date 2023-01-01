@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Http.Features
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Options
+
+@inject IViewLocalizer Localizer
+@inject IOptions<RequestLocalizationOptions> locOptions
+
+ @{
+    var currentRequestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var cultureItems = locOptions.Value.SupportedUICultures
+        .Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
+        .ToList();
+    var responseUrl = string.IsNullOrEmpty(Context.Request.Path) ? "~/" : $"~{Context.Request.Path.Value}";
+}
+
+<div title="@Localizer["Request the culture provider:"] @currentRequestCulture?.Provider?.GetType().Name">
+    <form id="selectLanguage" asp-controller="Movies" 
+          asp-action="SetAppLanguage" asp-route-returnUrl="@responseUrl"
+          method="post" class="form-horizontal" role="form">
+        <i class="fa fa-globe" style="font-size:36px"></i>
+        <select name="culture" style="background:#474747;border-style: none;border-radius: 100px; width:15px; margin-right:30px;"
+                onchange="this.form.submit();"
+                asp-for="@currentRequestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems">
+            
+        </select>
+    </form>
+</div>

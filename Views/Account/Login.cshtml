@@ -1,6 +1,7 @@
 ﻿@using eCommerce.Data.ViewModels;
 @model LoginVM;
-
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 @{
     ViewData["Title"] = "Hesabınıza giriş yapın";
 }
@@ -35,10 +36,11 @@
                     </div>
                     <span style="padding:5px;"></span>
                     <div class="form-group">
-                        <input class="btn btn-outline-success float-right" type="submit" value="Giriş yap" style="background-color:#F8E71C;border-style: none;border-radius: 100px;"/>
+                        <input class="btn btn-outline-success float-right" type="submit" value= @Localizer["Giriş"] style="background-color:#F8E71C;border-style: none;border-radius: 100px;"/>
                         <a class="btn btn-outline-secondary" asp-controller="Movies" asp-action="Index" style="background-color:#F8E71C;border-style: none;border-radius: 100px;">Kapat</a>
                     </div>
                 </form>
+
             </div>
         </div>
     </div>

@@ -151,7 +151,7 @@ namespace eCommerce.Data
                         new Movie()
                         {
                             Name = "The Shawshank Redemption",
-                            Description = "This is the Shawshank Redemption description",
+                            Description = "Esaretin Bedeli, Frank Darabont'un senaryosunu yazdığı ve yönettiği, başrollerinde Tim Robbins ve Morgan Freeman'ın yer aldığı 1994 yapımı Amerikan dram filmidir.",
                             Price = 29.50,
                             ImageURL = "http://dotnethow.net/images/movies/movie-1.jpeg",
                             StartDate = DateTime.Now,
@@ -310,7 +310,7 @@ namespace eCommerce.Data
                             MovieId = 6
                         },
                     });
-                    context.SaveChanges();
+                   // context.SaveChanges();
                 }
             }
 
@@ -331,7 +331,7 @@ namespace eCommerce.Data
 
                 //Users
                 var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-                string adminUserEmail = "admin@etickets.com";
+                string adminUserEmail = "b201210068@sakarya.edu.tr";
 
                 var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
                 if (adminUser == null)
@@ -343,9 +343,27 @@ namespace eCommerce.Data
                         Email = adminUserEmail,
                         EmailConfirmed = true
                     };
-                    await userManager.CreateAsync(newAdminUser, "Coding@1234?");
+                    await userManager.CreateAsync(newAdminUser, "Sau.1");
                     await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
                 }
+
+          
+                string adminUserEmail1 = "b201210026@sakarya.edu.tr";
+
+                var adminUser1 = await userManager.FindByEmailAsync(adminUserEmail1);
+                if (adminUser1 == null)
+                {
+                    var newAdminUser = new ApplicationUser()
+                    {
+                        FullName = "Admin User",
+                        UserName = "admin-user",
+                        Email = adminUserEmail1,
+                        EmailConfirmed = true
+                    };
+                    await userManager.CreateAsync(newAdminUser, "Sau.12");
+                    await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
+                }
+
 
 
                 string appUserEmail = "user@etickets.com";

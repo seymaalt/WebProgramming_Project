@@ -1,6 +1,7 @@
 ﻿@using eCommerce.Data.ViewModels;
 @model RegisterVM;
-
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 @{
     ViewData["Title"] = "Yeni bir hesap için kaydolun";
 }
@@ -45,7 +46,7 @@
                     </div>
                     <span style="padding:5px;"></span>
                     <div class="form-group">
-                        <input class="btn btn-outline-success float-right" type="submit" value="Kayıt ol" style="background-color:#F8E71C;border-style: none;border-radius: 100px;" />
+                        <input class="btn btn-outline-success float-right" type="submit" value="Kayıt Ol" style="background-color:#F8E71C;border-style: none;border-radius: 100px;" />
                         <a class="btn btn-outline-secondary" asp-controller="Movies" asp-action="Index" style="background-color:#F8E71C;border-style: none;border-radius: 100px;">Kapat</a>
                     </div>
                 </form>
